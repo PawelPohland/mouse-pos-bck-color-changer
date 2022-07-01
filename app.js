@@ -104,8 +104,8 @@ const allTiles = new ColoredTiles(
   colorHistoryElement
 );
 
-const onMouseMove = (event) => {
-  // get mouse position from event object
+const onPointerMove = (event) => {
+  // get pointer position from event object
   let { offsetX: r, offsetY: g } = event;
 
   // set blue color value to either some random value
@@ -114,7 +114,9 @@ const onMouseMove = (event) => {
   let b = Math.abs(r - g);
 
   // make sure that all the values are in range [0, ..., 255]
-  const rgb = [r, g, b].map((value) => value % Tile.MAX_COLOR_VALUE);
+  const rgb = [r, g, b].map(
+    (value) => Math.trunc(value) % Tile.MAX_COLOR_VALUE
+  );
 
   // it's possible that offsetX or offsetY can be negative
   if (rgb.every((value) => value >= 0)) {
@@ -126,6 +128,5 @@ const onMouseMove = (event) => {
   }
 };
 
-// TODO:
-// replace mousemove with pointermove
-document.body.addEventListener("mousemove", onMouseMove);
+// document.body.addEventListener("mousemove", onPointerMove);
+document.body.addEventListener("pointermove", onPointerMove);
