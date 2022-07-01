@@ -12,3 +12,9 @@ While you move your mouse over BODY element, mouse position is determined, RGB c
 - HTML
 - CSS
 - JavaScript
+
+## Preview
+
+Live demo: [click here](https://pawelpohland.github.io/mouse-pos-bck-color-changer/)
+
+[![App screenshot](preview.png "Preview - screenshot")](https://pawelpohland.github.io/mouse-pos-bck-color-changer/)
